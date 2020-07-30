@@ -20,6 +20,7 @@ import os.path
 import time
 import urllib.request
 import json
+import re
 
 print("""
 
@@ -37,9 +38,9 @@ Warning: This program is only for educational use and research only!
 """)
 
 #
-# Change the ports you'd like to scan here
+# Change the ports you'd like to scan here (separate with commas)
 #
-ports = (["80"])
+ports = (["80", "22"])
 
 def ping(ip, port):
     try:
@@ -63,6 +64,7 @@ def getservice(ip, port):
         result = s.connect_ex((ip, port))
         if(result == 0):
             service = s.recv(256).decode('utf-8').strip("\n").strip("\r")
+            service = " ".join(re.split("\s+", service, flags=re.UNICODE))
             return service
         else:
             return 'Unknown'
