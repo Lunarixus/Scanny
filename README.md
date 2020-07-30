@@ -1,6 +1,6 @@
 # Scanny - A Python mass scanning tool
 Scanny is a tool which can generate multiple IP addresses and scan them for open ports in a list. 
-It is fast, effective and can also return info about the services behind the port it may have found.  
+It is fast, effective and can also return info about the services behind the port. Scanny also has support for IP geolocation and ISP information.  
 
 # Before using, read this
 These kinds of tools are commonly misused and forked by bad actors, if you see this tool peforming any kinds  
